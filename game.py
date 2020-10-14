@@ -29,7 +29,6 @@ class Game:
         
         while self.replay == "" or self.replay == "y":
             self.active_phrase = self.get_random_phrase()
-            #run_phrase = Phrase(self.active_phrase)
             
             if self.replay == "y":
                 self.guesses = []
