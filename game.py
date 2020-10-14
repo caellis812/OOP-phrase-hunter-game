@@ -11,11 +11,11 @@ class Game:
     
     def __init__(self):
         self.phrases = [
-            "not  my  cup  of  tea",
-            "have  your  cake  and  eat  it  too",
-            "an  apple  a  day  keeps  the  doctor  away",
-            "no  use  crying  over  spilled  milk",
-            "two  peas  in  a  pod",
+            Phrase("not  my  cup  of  tea"),
+            Phrase("have  your  cake  and  eat  it  too"),
+            Phrase("an  apple  a  day  keeps  the  doctor  away"),
+            Phrase("no  use  crying  over  spilled  milk"),
+            Phrase("two  peas  in  a  pod"),
         ]
         self.active_phrase = None
         self.guesses = []
