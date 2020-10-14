@@ -93,3 +93,5 @@ Best of luck!""")
             self.active_phrase.display(self.guesses)
             print("\nCongratulations, you've completed the phrase and won this round of Phrase Hunters!")
         self.replay = input("\nWould you like to play again? (Y/N): ").lower()
+        while self.replay != "y" and self.replay != "n":
+            self.replay = input("\nInvalid entry. Would you like to play again? (Y/N): ").lower()
