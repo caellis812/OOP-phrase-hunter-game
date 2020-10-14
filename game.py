@@ -29,19 +29,19 @@ class Game:
         
         while self.replay == "" or self.replay == "y":
             self.active_phrase = self.get_random_phrase()
-            run_phrase = Phrase(self.active_phrase)
+            #run_phrase = Phrase(self.active_phrase)
             
             if self.replay == "y":
                 self.guesses = []
                 self.missed = 0
                 
-            while run_phrase.check_complete(self.guesses) == False and self.missed < 5:
-                run_phrase.display(self.guesses)
+            while self.active_phrase.check_complete(self.guesses) == False and self.missed < 5:
+                self.active_phrase.display(self.guesses)
                 current_guess = self.get_guess()
                 self.guesses.append(current_guess)
-                if run_phrase.check_letter(current_guess) == False:
+                if self.active_phrase.check_letter(current_guess) == False:
                     self.missed += 1
-                    print("\n\nOH NO! The letter '{}' isn't present. Be careful - you have a total of {} incorrect guesses.".format(current_guess, self.missed))
+                    print("\n\nOH NO! The letter '{}' isn't present. You have a total of {} incorrect guesses.".format(current_guess, self.missed))
             else:
                 self.game_over()
         print("\nThanks for playing! Goodbye.")   
@@ -87,9 +87,10 @@ Best of luck!""")
     
     def game_over(self):
         if self.missed == 5:
-            print("\nSorry, you've reached the maximum number of incorrect guesses! \nGAME OVER :(")
+            print("\n\n********* SORRY!! *********")
+            print("You've reached the maximum number of incorrect guesses! \nGAME OVER :(")
         else:
             print("\n\n********* WINNER!!! *********")
-            print("\nPhrase: {}".format(self.active_phrase))
+            self.active_phrase.display(self.guesses)
             print("\nCongratulations, you've completed the phrase and won this round of Phrase Hunters!")
         self.replay = input("\nWould you like to play again? (Y/N): ").lower()

@@ -11,7 +11,7 @@ class Phrase:
                 print_phrase += character
             else:
                 print_phrase += "_"
-        print("\nPHRASE:",print_phrase,)
+        print("\n\nPHRASE:",print_phrase,)
     
     
     def check_letter(self, letter):
