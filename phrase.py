@@ -10,7 +10,7 @@ class Phrase:
             if character in guessed_letters or character == " ":
                 print_phrase += character
             else:
-                print_phrase += "_"
+                print_phrase += "_ "
         print("\n\nPHRASE:",print_phrase,)
     
     
