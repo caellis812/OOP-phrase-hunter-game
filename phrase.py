@@ -8,6 +8,7 @@ class Phrase:
         print_phrase = ""
         for character in self.phrase:
             if character in guessed_letters or character == " ":
+                character = "{} ".format(character)
                 print_phrase += character
             else:
                 print_phrase += "_ "
